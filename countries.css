@@ -1,0 +1,19 @@
+body {
+  margin: 0em;
+  padding: 0;
+  background-color: gainsboro;
+}
+#countryList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flag {
+  width: 15em;
+}
+.country {
+  background-color: white;
+  width: 15em;
+  margin-top: 2em;
+}
