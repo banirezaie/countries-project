@@ -72,6 +72,7 @@ body {
 }
 #anchor {
   margin-right: 3em;
+  cursor: pointer;
 }
 #search {
   width: 19em;
@@ -155,4 +156,30 @@ body {
 #flagImg {
   max-width: 600px;
   max-height: 400px;
+}
+.darkMode {
+  background-color: hsl(207, 26%, 17%);
+  color: #fff;
+}
+.darkModeCountry {
+  background-color: hsl(209, 23%, 22%);
+  width: 17.5em;
+  height: 19.5em;
+  margin: 2em 1.5em;
+  border-radius: 5px;
+}
+.headerDark {
+  background-color: hsl(209, 23%, 22%) !important;
+  box-shadow: none !important;
+}
+.searchBarDark,
+.selectDarkMode,
+.backDarkMode {
+  background-color: hsl(209, 23%, 22%);
+  color: #fff !important;
+  border: 2px solid hsl(209, 23%, 22%) !important;
+  box-shadow: none !important;
+}
+.searchBarDark {
+  color: #fff !important;
 }

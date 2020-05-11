@@ -163,7 +163,7 @@ function oneCountry(json) {
   let flagImage = document.createElement(`img`);
   flagDiv.appendChild(flagImage);
   flagImage.src = json.flag;
-  flagImage.id = `flagImg`
+  flagImage.id = `flagImg`;
 
   //info and border countries div
   let infoNBorder = document.createElement(`div`);
@@ -217,9 +217,29 @@ function oneCountry(json) {
   borderDiv.appendChild(borderPara);
 }
 
+function lightMode() {
+  let bodyTag = document.getElementsByTagName(`body`);
+  let bodyArr = Array.from(bodyTag);
+  let body = bodyArr[0];
 
-function lightMode(){
-  
+  anchor.addEventListener(`click`, () => {
+    if (anchor.textContent === `Dark Mode`) {
+      anchor.innerHTML = `<span class="fa fa-moon-o"></span>Light Mode`;
+      anchor.setAttribute(`onclick`, `window.location.href = "/"`);
+      body.className = `darkMode`;
+      let countryClass = document.getElementsByClassName(`country`);
+      let countryArr = Array.from(countryClass);
+      countryArr.forEach((x) => (x.className = `darkModeCountry`));
+      header.className = `headerDark`;
+      searchBar.className = ` searchBarDark`;
+      select.className = `selectDarkMode`;
+      let infoValue = document.getElementsByClassName(`value`);
+      let infoValueArr = Array.from(infoValue);
+      infoValueArr.forEach((x) => (x.className = `valueDarkMode`));
+    } else {
+      anchor.innerHTML = `<span class="fa fa-moon-o"></span>Dark Mode`;
+    }
+  });
 }
 
 function onLoad() {
@@ -227,6 +247,7 @@ function onLoad() {
   makeHeader();
   search();
   filterByRegion();
+  lightMode();
 }
 
 window.onload = onLoad;
