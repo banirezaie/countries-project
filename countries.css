@@ -30,6 +30,8 @@ body {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 .flag {
   width: 17.5em;
@@ -42,7 +44,7 @@ body {
   background-color: white;
   width: 17.5em;
   height: 19.5em;
-  margin: 2em 0.5em;
+  margin: 2em 1.5em;
   border-radius: 5px;
 }
 .country-information {
@@ -66,7 +68,7 @@ body {
   box-shadow: 1px 6px 4px -3px rgb(202, 202, 202);
 }
 #where {
-  margin-left: 2em;
+  margin-left: 1.5em;
 }
 #anchor {
   margin-right: 3em;
