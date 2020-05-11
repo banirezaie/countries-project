@@ -22,34 +22,30 @@
     U+FEFF, U+FFFD;
 }
 body {
-  margin: 0em;
-  /* padding: 0; */
+  margin: 0;
   background-color: rgb(233, 233, 233);
+  font-family: Calibri;
 }
 #countryList {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
-  margin-left: 3em;
-  margin-right: 3em;
 }
 .flag {
-  width: 15em;
+  width: 17.5em;
   height: 8.5em;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-
   object-fit: cover;
 }
 .country {
   background-color: white;
-  width: 15em;
+  width: 17.5em;
   height: 19.5em;
-  margin: 2em 1.5em;
+  margin: 2em 0.5em;
   border-radius: 5px;
 }
 .country-information {
-  font-family: Calibri;
   margin-left: 2em;
 }
 .countryName {
@@ -62,21 +58,37 @@ body {
   color: rgb(131, 131, 131);
 }
 #header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0em 3em;
   background-color: white;
-  /* width: 100%; */
+  box-shadow: 1px 6px 4px -3px rgb(202, 202, 202);
+}
+#where {
+  margin-left: 2em;
+}
+#anchor {
+  margin-right: 3em;
 }
 #search {
   width: 19em;
+}
+#searchBar {
+  width: 20em;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  font-size: small;
+  margin-top: 2.5em;
+  padding: 12px 20px 12px 40px;
+  box-shadow: -2px 5px 12px 0px rgba(176, 176, 176, 1);
 }
 .form-control {
   padding-left: 2.375rem;
 }
 .form-control-feedback {
   position: absolute;
+  margin-top: 2.8em;
   z-index: 2;
   width: 2.375rem;
   height: 2.375rem;
@@ -88,4 +100,57 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 0em 3em;
+}
+#select {
+  width: 20em;
+  height: 3.5em;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  font-size: small;
+  margin-top: 2.5em;
+  padding: 20px 20px 20px 40px;
+  box-shadow: -2px 5px 12px 0px rgba(176, 176, 176, 1);
+}
+#backDiv {
+  margin-left: 4.5em;
+  margin-bottom: 2.5em;
+  margin-top: 2.5em;
+}
+#back {
+  width: 10em;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  font-size: medium;
+  padding: 20px 20px 20px 20px;
+  box-shadow: -2px 5px 12px 0px rgba(176, 176, 176, 1);
+}
+.faArrow {
+  font-size: large;
+}
+
+#infoDiv {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#information {
+  width: 40em;
+  margin-top: 1.5em;
+  margin-bottom: 3em;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 15em;
+}
+#countryNameHeader {
+  font-size: xx-large;
+}
+#flagDiv {
+  max-width: 600px;
+  max-height: 400px;
+}
+#flagImg {
+  max-width: 600px;
+  max-height: 400px;
 }

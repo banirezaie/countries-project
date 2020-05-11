@@ -19,8 +19,9 @@ function makeHeader() {
   where.id = `where`;
 
   const darkMode = document.createElement(`a`);
+  darkMode.id = `anchor`;
   header.appendChild(darkMode);
-  darkMode.textContent = `Dark Mode`;
+  darkMode.innerHTML = `<span class="fa fa-moon-o"></span>Dark Mode`;
 }
 
 function makeCountry(countryObj) {
@@ -112,7 +113,7 @@ function makeOption(region) {
 function getCountryInfoSentence(infoTitle, value) {
   const sentenceElement = document.createElement(`p`);
   sentenceElement.className = `countryPElement`;
-  sentenceElement.innerHTML = `${infoTitle} : <span class = "value">${value}</span>`;
+  sentenceElement.innerHTML = `${infoTitle} : <span class = "value">${value}</spanDark>`;
   return sentenceElement;
 }
 
@@ -121,18 +122,13 @@ function eachCountryInfo() {
   let navBar = document.getElementById(`searchFilter`);
   let countries = Array.from(countryDiv);
   countries.forEach((eachCountry) => {
-    // console.log(eachCountry);
     eachCountry.addEventListener(`click`, () => {
-      // eachCountry.style.display = "none";
-      // console.log(eachCountry.id);
       fetch(`https://restcountries.eu/rest/v2/alpha/${eachCountry.id}`)
         .then((response) => response.json())
         .then((json) => {
-          // console.log(json);
           oneCountry(json);
         });
       countries.map((x) => {
-        // console.log(x);
         x.style.display = `none`;
       });
       navBar.style.display = `none`;
@@ -150,9 +146,10 @@ function oneCountry(json) {
   backButtonDiv.id = `backDiv`;
   let backButton = document.createElement(`button`);
   backButtonDiv.appendChild(backButton);
+  backButton.id = `back`;
   backButton.setAttribute(`type`, `button`);
   backButton.setAttribute(`onclick`, `window.location.href = "/"`);
-  backButton.innerHTML = `<span class= "fa fa-arrow-left"></span>Back`;
+  backButton.innerHTML = `<span class= "fa fa-arrow-left faArrow">  </span>  Back`;
 
   //flag and info and border countries div
   let infoDiv = document.createElement(`div`);
@@ -166,6 +163,7 @@ function oneCountry(json) {
   let flagImage = document.createElement(`img`);
   flagDiv.appendChild(flagImage);
   flagImage.src = json.flag;
+  flagImage.id = `flagImg`
 
   //info and border countries div
   let infoNBorder = document.createElement(`div`);
@@ -175,11 +173,16 @@ function oneCountry(json) {
   //information
   let informationDiv = document.createElement(`div`);
   informationDiv.id = `information`;
-  infoNBorder.appendChild(informationDiv);
+
+  let headerName = document.createElement(`div`);
   let countryName = document.createElement(`h1`);
+  countryName.id = `countryNameHeader`;
   countryName.className = `countryName`;
   countryName.innerText = json.name;
-  informationDiv.appendChild(countryName);
+  infoNBorder.appendChild(countryName);
+  infoNBorder.appendChild(informationDiv);
+  informationDiv.appendChild(headerName);
+
   informationDiv.appendChild(
     getCountryInfoSentence(`Native Name`, json.nativeName)
   );
@@ -208,7 +211,15 @@ function oneCountry(json) {
   let borderDiv = document.createElement(`div`);
   borderDiv.id = `borderDiv`;
   infoNBorder.appendChild(borderDiv);
-  // borderDiv.appendChild(`Border Countries`, json.borders);
+  const borderPara = document.createElement(`p`);
+  borderPara.className = `borderPara`;
+  borderPara.innerHTML = `<span class="border">Border Countries</span> : <span class = "borderCountries">${json.borders}</span>`;
+  borderDiv.appendChild(borderPara);
+}
+
+
+function lightMode(){
+  
 }
 
 function onLoad() {
