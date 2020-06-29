@@ -67,6 +67,7 @@ function search() {
   searchBar.addEventListener(`keyup`, (x) => {
     let searchValue = x.target.value.toLowerCase();
     let countryDiv = document.getElementsByClassName(`country`);
+    console.log(countryDiv);
     Array.from(countryDiv).forEach((element) => {
       let nameLowerCase = element.textContent.toLowerCase();
       if (nameLowerCase.indexOf(searchValue) != -1) {
